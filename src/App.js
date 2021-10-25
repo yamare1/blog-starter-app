@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
+import Nav from "./Nav";
+import Article from "./Article";
+import { fetchTitles } from "./articleService";
 
-function App() {
+export default function App() {
+  useEffect(() => {
+    setTitles(
+      fetchTitles().map((article) => ({ id: article.id, title: article.title }))
+    );
+  }, []);
+
+  const [titles, setTitles] = useState([]);
+  const [articleId, setArticleId] = useState(null);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav titles={titles} setArticleId={setArticleId} />
+      <Article articleId={articleId} />
     </div>
   );
 }
-
-export default App;
