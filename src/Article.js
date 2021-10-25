@@ -16,7 +16,7 @@ export default function Article({ articleId }) {
         <section>
           <h2>{article.title}</h2>
           <p>{`Posted: ${article.date}`}</p>
-          <p>{article.body}</p>
+          <p style={{ whiteSpace: "break-spaces" }}>{article.body}</p>
         </section>
       )}
     </article>
