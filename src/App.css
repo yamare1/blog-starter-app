@@ -14,3 +14,11 @@ article {
 nav {
   background-color: #dee9ff;
 }
+
+article .date {
+  font-style: italic;
+}
+
+article .body {
+  white-space: break-spaces;
+}

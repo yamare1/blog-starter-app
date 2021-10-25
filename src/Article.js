@@ -15,8 +15,8 @@ export default function Article({ articleId }) {
       ) : (
         <section>
           <h2>{article.title}</h2>
-          <p>{`Posted: ${article.date}`}</p>
-          <p style={{ whiteSpace: "break-spaces" }}>{article.body}</p>
+          <p className="date">{`Posted: ${article.date}`}</p>
+          <p className="body">{article.body}</p>
         </section>
       )}
     </article>
