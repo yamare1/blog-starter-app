@@ -1,10 +1,15 @@
 .App {
   display: grid;
+  grid-template-rows: min-content auto;
   grid-template-columns: 2fr 3fr;
   height: 100vh;
   overflow: scroll;
 }
 
+header {
+  text-align: center;
+  grid-column: 1 / span 2;
+}
 nav,
 article {
   height: 100%;
